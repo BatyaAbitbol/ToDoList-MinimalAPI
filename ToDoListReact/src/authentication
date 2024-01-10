@@ -1,0 +1,24 @@
+// import * as jwt_decode from 'jwt-decode';
+
+// // Authentication Functions
+//   getLoginUser: () => {
+//     const accessToken = localStorage.getItem('access_token');
+//     if (accessToken) {
+//       return jwt_decode(accessToken);
+//     }
+//     return null;
+//   },
+
+//   logout: () => {
+//     localStorage.setItem('access_token', '');
+//   },
+
+//   register: async (name, password) => { 
+//     const res = await axios.post('/register', { name, password });
+//     saveAccessToken(res.data);
+//   },
+
+//   login: async (name, password) => { 
+//     const res = await axios.post('/login', { name, password });
+//     saveAccessToken(res.data);
+//   },
