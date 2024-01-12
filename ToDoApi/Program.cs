@@ -24,15 +24,11 @@ app.UseCors(builder =>
     .AllowAnyHeader()
 );
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-        options.RoutePrefix = string.Empty;
-    });
-}
+// if (app.Environment.IsDevelopment())
+// {
+app.UseSwagger();
+app.UseSwaggerUI();
+// }
 
 // get all items records
 app.MapGet("/items", async (ToDoDBContext context) => await context.Items.ToListAsync());
@@ -83,4 +79,5 @@ app.MapDelete("items/{id}", async (ToDoDBContext context, int id) =>
     else return Results.NotFound();
 });
 
+app.MapGet("/", () => "ToDoList Server is RUNNING 🏃🏃‍♀️🏃‍♂️");
 app.Run();
