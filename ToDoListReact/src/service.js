@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = "http://localhost:5241";
+const apiUrl = process.env.REACT_APP_API;
 axios.defaults.baseURL = apiUrl;
 
 function saveAccessToken(authResult) {
@@ -18,7 +18,7 @@ axios.interceptors.response.use(
   function (res) {
     return res.data
   },
-  function (err) { 
+  function (err) {
     console.log(err);
     if (err.response.status === 401) {
       return (window.location.href = '/login')
