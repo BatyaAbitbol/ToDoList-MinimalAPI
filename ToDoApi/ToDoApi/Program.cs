@@ -81,5 +81,5 @@ app.MapDelete("/items/{id}", async (ToDoDBContext context, int id) =>
     else return Results.NotFound();
 });
 
-app.MapGet("/", () => "ToDoList Server is RUNNING id: 🏃🏃‍♀️🏃‍♂️");
+app.MapGet("/", (int number) => "ToDoList Server is RUNNING #: " + number + " 🏃🏃‍♀️🏃‍♂️");
 app.Run();
