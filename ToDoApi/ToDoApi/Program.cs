@@ -1,10 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 using ToDoApi;
 
@@ -24,15 +20,15 @@ app.UseCors(builder =>
     .AllowAnyHeader()
 );
 
-if (app.Environment.IsDevelopment())
+// if (app.Environment.IsDevelopment())
+// {
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-        options.RoutePrefix = string.Empty;
-    });
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = string.Empty;
+});
+// }
 
 // get all items records
 app.MapGet("/items", async (ToDoDBContext context) => await context.Items.ToListAsync());
@@ -57,7 +53,7 @@ app.MapPost("/items", async (ToDoDBContext context, Item _item) =>
 });
 
 // update an item
-app.MapPut("items/{id}", async (ToDoDBContext context, Item _item) =>
+app.MapPut("/items/{id}", async (ToDoDBContext context, Item _item) =>
 {
     var item = context.Items.Find(_item.Id);
     if (item != null)
@@ -71,7 +67,7 @@ app.MapPut("items/{id}", async (ToDoDBContext context, Item _item) =>
 });
 
 // delete an item
-app.MapDelete("items/{id}", async (ToDoDBContext context, int id) =>
+app.MapDelete("/items/{id}", async (ToDoDBContext context, int id) =>
 {
     var _item = context.Find<Item>(id);
     if (_item != null)
