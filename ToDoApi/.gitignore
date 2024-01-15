@@ -1,5 +1,5 @@
 node_modules
 debug
-package-lock.json
 build
 .vscode
+bin
