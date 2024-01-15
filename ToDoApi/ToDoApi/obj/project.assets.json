@@ -2441,11 +2441,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\win\\PraktiCode\\ToDoList-MinimalAPI\\ToDoApi\\ToDoApi.csproj",
+      "projectUniqueName": "C:\\Users\\win\\PraktiCode\\ToDoList-MinimalAPI\\ToDoApi\\ToDoApi\\ToDoApi.csproj",
       "projectName": "ToDoApi",
-      "projectPath": "C:\\Users\\win\\PraktiCode\\ToDoList-MinimalAPI\\ToDoApi\\ToDoApi.csproj",
+      "projectPath": "C:\\Users\\win\\PraktiCode\\ToDoList-MinimalAPI\\ToDoApi\\ToDoApi\\ToDoApi.csproj",
       "packagesPath": "C:\\Users\\win\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\win\\PraktiCode\\ToDoList-MinimalAPI\\ToDoApi\\obj\\",
+      "outputPath": "C:\\Users\\win\\PraktiCode\\ToDoList-MinimalAPI\\ToDoApi\\ToDoApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
