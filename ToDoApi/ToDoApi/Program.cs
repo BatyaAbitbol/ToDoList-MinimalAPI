@@ -26,8 +26,12 @@ app.UseCors(builder =>
 
 // if (app.Environment.IsDevelopment())
 // {
-app.UseSwagger();
-app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        options.RoutePrefix = string.Empty;
+    });
 // }
 
 // get all items records
